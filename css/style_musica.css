@@ -1,0 +1,186 @@
+:root{
+    --fuente: "Montserrat",sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco:#ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3; 
+
+}
+
+
+h1{
+    font-size: 2.7rem;
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+
+
+
+body{
+    padding-top: 7rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+    padding-bottom: 6rem;
+}
+
+.contenedor-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.sin-mod{
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img{
+    width: 70%;
+    padding-left: 2rem;
+}
+
+
+.navegacion a{
+    margin-right: 2rem;
+}
+.contenedor-main{
+    padding-top: 2rem;
+    width: 100%;
+    background-color: white;
+    
+    
+}
+
+
+/*TERMINA HEADER*/
+
+.contenedor-main{
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.cabecera-musica{
+    margin-top: 2rem;
+}
+
+
+.formulario-musica{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+
+
+
+.contenedor-formulario {
+    background-color: white;
+    margin-top: 5rem;
+    padding: 2rem 10rem 2rem 10rem;
+    border-radius: 8px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+input[type="file"], input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[readonly] {
+    background-color: #f2f2f2; 
+    cursor: not-allowed;
+}
+
+textarea {
+    resize: none;
+}
+
+.contenedor-boton{
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+
+
+.boton-subir{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem; 
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(255, 102, 178);
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    margin-top: 1rem;  
+    
+    
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-subir:hover{
+transform: scale(1.1);
+background-color: rgb(250, 81, 165);
+
+}
+
+/*empieza footer*/
+
+.footer{
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer{
+    
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p{
+    color: white;
+    text-align: center;
+}
+

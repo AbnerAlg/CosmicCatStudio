@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="../img/logoVentana2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style_shop.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenedor-header">
+            <h1 class="logo"><a class="sin-mod" href="#"><img class="logo-img" src="../img/LOGO-corregido.png" alt=""></a></h1>
+            <nav class="navegacion">
+                <a class="sin-mod" href="#">Musica</a>
+                <a class="sin-mod" href="#">Tienda</a>
+                <a class="sin-mod" href="#">Configuracion</a>
+                <a class="sin-mod" href="#">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor-main">
+            <div class="contenedor-informacion-merch">
+                <div class="contenedor-imagen-merch">
+                    <img id="imagen-producto" class="informacion-merch-imagen" src="" alt="Producto">
+                </div>
+                <div class="informacion-merch">
+                    <p id="nombre-artista" class="informacion-merch-artista"><strong>Artista:</strong></p>
+                    <h1 id="nombre-producto" class="informacion-merch-nombre"></h1>
+                    <div id="descripcion-producto" class="informacion-merch-descripcion"></div>
+                    <div class="precio-cantidad">
+                        <h2 id="precio-producto" class="informacion-merch-precio"></h2>
+                        <input class="informacion-merch-cantidad" type="number" min="1" max="10" step="1" value="1">
+                    </div>
+                    <p id="stock-producto" class="informacion-merch-stock"></p>
+                    <button class="informacion-merch-boton">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor-footer">
+            <p>&#169; CosmicCatStudio 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Obtener id_producto e id_oyente de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const idProducto = urlParams.get('id_producto');
+        const idOyente = urlParams.get('id_oyente');
+
+        // Verificar que ambos IDs existan
+        if (!idProducto || !idOyente) {
+            alert('ID de producto o oyente no especificado');
+            throw new Error('ID de producto o oyente no especificado');
+        }
+
+        // Cargar los detalles del producto
+        fetch(`../php2/obtener_productos.php?id_producto=${idProducto}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('imagen-producto').src = data.producto.imagen_producto;
+                    document.getElementById('nombre-artista').textContent = `Artista: ${data.producto.nombre_artista}`;
+                    document.getElementById('nombre-producto').textContent = data.producto.nombre_producto;
+                    document.getElementById('descripcion-producto').innerHTML = `<p>${data.producto.descripcion}</p>`;
+                    document.getElementById('precio-producto').textContent = `$${data.producto.precio}`;
+                    document.getElementById('stock-producto').textContent = `Stock: ${data.producto.stock}`;
+                    document.querySelector('.informacion-merch-cantidad').max = data.producto.stock;
+                } else {
+                    alert('Producto no encontrado');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Agregar el producto al carrito
+        document.querySelector('.informacion-merch-boton').addEventListener('click', () => {
+            const cantidad = parseInt(document.querySelector('.informacion-merch-cantidad').value);
+            if (cantidad < 1) {
+                alert('Por favor selecciona una cantidad válida');
+                return;
+            }
+
+            const formData = {
+                id_oyente: idOyente,
+                id_producto: idProducto,
+                cantidad: cantidad
+            };
+
+            fetch('../php2/agregar_productos.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                        alert('Producto agregado al carrito con éxito');
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>

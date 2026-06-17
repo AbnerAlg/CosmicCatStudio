@@ -1,0 +1,158 @@
+/*Reproductor*/
+
+.reproductor-musica {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.medio-reproductor{
+    margin: 0 auto;
+}
+
+.barra-progreso {
+    width: 100%;
+    appearance: none;
+    height: 8px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 102, 178);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.barra-progreso::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 2px solid rgb(255, 102, 178);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.barra-progreso::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 2px solid rgb(255, 102, 178);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.info-cancion {
+    display: flex;
+    align-items: center;
+}
+
+.portada {
+    width: 5rem;
+    margin-right: 1rem;
+    border-radius: 16px;
+}
+
+.detalles-cancion {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-cancion {
+    font-weight: bold;
+    margin: 0;
+}
+
+.artista-cancion {
+    margin: 0;
+}
+
+.controles-reproductor {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+
+.boton-control {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.boton-control:hover {
+    color: #ff66b2; /* Cambia el color al hacer hover */
+}
+
+.contenedor-album {
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+
+.titulo-album {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff66b2;
+}
+
+.portada-album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-album {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-canciones {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.cancion-item {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+body{
+    background-color: white;
+    margin-bottom: 5rem;
+}
+
+.cancion-item img {
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #ff66b2;
+}
+
+.cancion-item:hover {
+    transform: scale(1.05);
+}

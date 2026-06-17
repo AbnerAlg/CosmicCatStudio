@@ -1,0 +1,229 @@
+:root{
+    --fuente: "Montserrat",sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco:#ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3; 
+
+}
+
+h1{
+    font-size: 2.7rem;
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+body{
+    padding-top: 7rem;
+    background-color: white;
+    font-family: var(--fuente);
+    
+}
+
+.container-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.sin-mod{
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img{
+    width: 70%;
+    padding-left: 2rem;
+}
+
+.navegacion a{
+    margin-right: 2rem;
+}
+.contenedor-Main{
+    width: 100%;
+    background-color: white;
+    /* padding: 1rem; */
+}
+
+/*TERMINA HEADER*/
+
+.modificacion-editar{
+    padding-top: 2rem;
+    text-align: center;
+}
+.contenedor-editar {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    margin: 2rem auto;
+    width: 40%; 
+    max-width: 1080px;
+    font-family: var(--fuente);
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+/* .campo {
+    margin-bottom: 1rem;
+    width: 100%; 
+} */
+
+.campo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left; 
+}
+
+.campo input,
+.campo textarea {
+    width: 90%; 
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-modificar{
+    background-color: rgb(201, 32, 207);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-modificar:hover {
+    background-color: #a81a8a;
+}
+
+.contenedor-editar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenedor-foto-y-campos {
+    display: flex;
+    align-items: flex-start;
+    gap: 150px;
+}
+
+.imagen-perfil {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+
+
+.imagen-banner {
+    width: 150px;
+    height: 80px;
+    overflow: hidden;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+
+.imagen-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.input-archivo {
+    display: none;
+}
+
+.ban{
+
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e02957; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-editar:hover {
+    background-color: #E91E63; 
+
+}
+.campo-editar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+/* Botón de editar */
+.btn-modificar{
+    padding: 10px 20px;
+    background-color: #a81a8a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/*empieza footer*/
+
+.footer{
+    padding: 2rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer{
+    
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p{
+    color: white;
+    text-align: center;
+}

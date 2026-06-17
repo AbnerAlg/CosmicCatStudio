@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Música</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="../img/logoVentana2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style_musica.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="contenedor-header">
+            <h1 class="logo"><a class="sin-mod" href="#"><img class="logo-img" src="../img/LOGO-corregido.png" alt=""></a>
+            </h1>
+            <nav class="navegacion">
+                <a class="sin-mod" href="#">Musica</a>
+                <a class="sin-mod" href="#">Tienda</a>
+                <a class="sin-mod" href="#">Configuracion</a>
+                <a class="sin-mod" href="#">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor-main">
+            <h2 class="cabecera-musica">Subir musica</h2>
+            <div class="formulario-musica">
+                
+                <form class="contenedor-formulario" action="tu-servidor-de-subida" method="post" enctype="multipart/form-data">
+                    
+                    <form class="contenedor-formulario" action="subir_musica.php" method="post" enctype="multipart/form-data">
+
+                    <label for="archivo-musica">Elige tu archivo de música:</label>
+                    <input type="file" id="archivo-musica" name="archivo-musica" accept=".mp3,.FLAC,.AAC,.WAV,.AIFF"
+                        required>
+
+                    <label for="titulo-cancion">Título de la canción:</label>
+                    <input type="text" id="titulo-cancion" name="titulo-cancion" maxlength="255" required>
+
+                    <label for="genero">Género:</label>
+                    <input type="text" id="genero" name="genero" maxlength="255" required>
+
+                    <label for="colaboradores">Colaboradores:</label>
+                    <input type="text" id="colaboradores" name="colaboradores" maxlength="255">
+
+                    <label for="letra">Letra:</label>
+                    <textarea id="letra" name="letra" rows="4" required></textarea>
+
+                    <label for="foto-representativa">Foto representativa:</label>
+                    <input type="file" id="foto-representativa" name="foto-representativa" accept="image/*" required>
+
+                    <br><br>
+                    <div class="contenedor-boton">
+                        <button class="boton-subir" type="submit">Subir</button>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor-footer">
+            <p>&#169; CosmicCatStudio 2024</p>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/graficos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/grafico_canciones.js"></script>
+
+</body>
+
+</html>

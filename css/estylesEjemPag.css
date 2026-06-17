@@ -1,0 +1,2082 @@
+* {
+    padding: 0.0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+  }
+  
+  .prueba,
+  .prueba * {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.01);
+  }
+  
+  
+  /* .no-mostrar */
+  
+  .hacer-visible:not(:checked) ~ .contenedor .no-mostrar {
+    display: none !important;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(228, 229, 236, 1);
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .letra-principal,
+  .titulo,
+  .menu .enlaces,
+  .slider figcaption,
+  .servicios .btn.cta,
+  .btn.enviar {
+    font-family: 'Nunito', verdana, sans-serif;
+    font-weight: 400;
+  }
+  
+  .letra-secundaria,
+  body {
+    font-family: 'Open Sans', arial, sans-serif;
+  }
+  
+  .titulo {
+    font-size: 1.5em;
+    color: rgb(53, 107, 148);
+    line-height: 1.1em;
+  }
+  
+  .icono::before,
+  .icono::after {
+    content: '';
+    font-family: "FontAwesome";
+  }
+  
+  .parrafo {}
+  
+  .lista {
+    text-align: left;
+    padding-left: 3.6em;
+    list-style-type: none;
+  }
+  
+  .lista li {
+    padding-left: 0.6em;
+    position: relative;
+    font-size: 0.8em;
+    line-height: 1.8em;
+  }
+  
+  .lista li::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(3, 116, 164);
+    left: -1em;
+    width: .4em;
+    height: .4em;
+    border-radius: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  
+  .ctrl.esconder {
+    position: fixed;
+  }
+  
+  .esconder {
+    position: absolute;
+    opacity: 0;
+    z-index: 100;
+  }
+  
+  .btn.subir {
+    position: fixed;
+    width: 2em;
+    height: 2em;
+    background-color: rgba(255, 255, 255, .9);
+    display: block;
+    right: 5%;
+    bottom: 2em;
+    z-index: 20;
+    box-shadow: 0 0 1em rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    text-decoration: none;
+  }
+  
+  .icono.subir::before {
+    content: '\f062';
+    color: #0374A4;
+  }
+  
+  .menu-config {
+    position: fixed;
+    right: 1em;
+    top: .5em;
+    z-index: 200;
+    list-style-type: none;
+    opacity: 0;
+    -webkit-transform: translateY(-80%);
+            transform: translateY(-80%)
+  }
+  
+  .menu-config:hover {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%)
+  }
+  
+  .menu-config:hover li {
+    display: block;
+  }
+  
+  .trigger-config.icono::before {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    display: block;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .5);
+  }
+  
+  .icono.config::before {
+    content: '\f1de';
+    color: #fff;
+  }
+  
+  .icono.ojo::before {
+    content: '\f06e';
+  }
+  
+  .hacer-visible:checked ~ .contenedor .no-mostrar {
+    display: inherit;
+    -webkit-animation: aparece-abajo .3s ease .1s both;
+            animation: aparece-abajo .3s ease .1s both;
+  }
+  
+  .hacer-visible:checked ~ .contenedor .icono.ojo:before {
+    content: '\f070';
+  }
+  
+  label.trigger-config.icono.ojo {
+    display: block;
+    margin-top: 2em;
+  }
+  
+  input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 0.1em #5FA0D4;
+  }
+  
+  html .btn:hover,
+  html .btn:focus
+  {
+    -webkit-transform: translateY(-2px) !important;
+            transform: translateY(-2px) !important;
+    box-shadow: 0 0 0 0 rgba(0,0,0,.5) !important;
+    background: rgb(0, 166, 230) !important;
+    outline: none;
+  }
+  
+  html .btn.subir:focus::before,
+  html .btn.subir:hover::before
+  {
+    color: #fff;
+  }
+  
+  html .btn:active
+  {
+    -webkit-transform: translateY(10px) !important;
+            transform: translateY(10px) !important;
+    
+  }
+  
+  /*========================
+  ENCABEZADO
+  ========================*/
+  
+  .contenedor {
+    margin-top: 6.5em;
+  }
+  
+  .encabezado {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+  .menu {
+    position: relative;
+    padding: 0 5%;
+  }
+  
+  .menu::after {
+    content: '';
+    background-image: url('http://eduholding.gutierrezedgar.com/img/grafismo-lado-izq.png');
+    background-position: left top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 25vw;
+    max-width: 12em;
+    max-height: 8em;
+  }
+  
+  .menu .logo {
+    max-width: 7em;
+    padding: .7em 0;
+  }
+  
+  .menu .logo img {
+    width: 100%;
+    display: block;
+  }
+  
+  .menu .logo,
+  .menu ul {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .menu ul {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    top: 100%;
+    min-width: 12em;
+    -webkit-transition: all .5s ease .3s;
+    transition: all .5s ease .3s;
+  }
+  
+  /* .menu li {} */
+  
+  .menu .enlace {
+    text-decoration: none;
+    padding: .5em;
+    display: block;
+    color: rgb(4, 100, 144);
+    text-transform: uppercase;
+  }
+  
+  .menu .trigger:focus ~ ul {
+    overflow: visible;
+    max-height: 60vh;
+    display: block;
+    list-style: none;
+    padding: 0.5em 0 1em;
+    -webkit-animation: aparece-abajo .5s ease .3s both;
+            animation: aparece-abajo .5s ease .3s both;
+    -webkit-transition: all .5s ease .3s;
+    transition: all .5s ease .3s;
+  }
+  
+  .menu .trigger {
+    display: inline-block;
+    width: calc(100% - 8.5em);
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+  }
+  
+  .menu ul::after {
+    width: 8em;
+    height: 3.5em;
+    display: block;
+    position: absolute;
+    bottom: 110%;
+    right: 2em;
+    content: '';
+    cursor: pointer;
+  }
+  
+  .menu .icono::before {
+    content: '\f0c9';
+    color: rgba(0, 0, 0, .8);
+  }
+  
+  .menu .icono:focus::before {
+    content: '\f00d';
+    background: rgba(50, 0, 0, 0.2);
+    padding: .5em .6em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    border: white 2px solid;
+  }
+  
+  
+  /*========================
+  CONTENIDO
+  ========================*/
+  
+  /* .contenido {} */
+  
+  .contenido .seccion {
+    background-color: #fff;
+  }
+  
+  .seccion .portada {
+    min-height: 40vh;
+    position: relative;
+    background-color: rgb(4, 99, 141);
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .seccion .portada span {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    left: 50%;
+    background-color: rgba(255, 255, 255, .5);
+    display: inline-block;
+    width: 100%;
+    font-size: 1.6em;
+    padding: .5em 0;
+  }
+  
+  
+  /*========================
+  BANNER
+  ========================*/
+  
+  /* .banner .ctrl {}
+  
+  .banner #slide1 ~ .slide1 {}
+  
+  .banner #slide2 ~ .slide2 {}
+  
+  .banner #slide3 ~ .slide3 {}
+  
+  .banner #slide4 ~ .slide4 {} */
+  
+  .seccion.banner {
+    width: 100%;
+    min-height: 60vh;
+    background-color: #04638D;
+    background-image: -webkit-linear-gradient(45deg, rgb(4, 97, 140) 0%, rgb(0, 183, 255) 100%);
+    background-image: linear-gradient(45deg, rgb(4, 97, 140) 0%, rgb(0, 183, 255) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    pointer-events: initial;
+    cursor: pointer;
+    -webkit-animation: activa-elemento 3s ease forwards;
+            animation: activa-elemento 3s ease forwards;
+  }
+  
+  .banner:hover .slider,
+  .banner:hover::before
+  {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  
+  .banner::before
+  {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,200,255,.8);
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    -webkit-animation: duracion ease-in 6s infinite;
+            animation: duracion ease-in 6s infinite;
+    z-index: 6;
+  }
+  
+  .banner::after
+  {
+    content: '▼';
+    position: absolute;
+    z-index: 6;
+    background-color: rgba(0,200,255,.4);
+    font-size: 3em;
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.5em;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    -webkit-transform: 
+      rotateZ(-90deg) 
+      translateY(-50%)
+      translateX(-50%);
+            transform: 
+      rotateZ(-90deg) 
+      translateY(-50%)
+      translateX(-50%);
+    opacity: 0;
+  }
+  
+  .banner:hover::after
+  {
+    opacity: 1;
+    content: '=';
+  }
+  
+  .slider
+  {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.1);
+    background-size: cover;
+    -webkit-transform: translateY(-150%);
+            transform: translateY(-150%);
+    -webkit-animation: slider 24s ease infinite;
+            animation: slider 24s ease infinite;
+  }
+  
+  
+  .slider figcaption
+  {  
+    position: absolute;
+    top: 10%;
+    background-color: rgba(4, 98, 140, .8);
+    background: -webkit-linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+    background: linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+    padding: .8em 1.5em;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 10px;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    opacity: .8;
+  }
+  
+  .slider .trigger {
+    position: absolute;
+    display: block;
+    padding: 1em;
+    background-color: rgba(0,183,255,.1);
+    width: 3em;
+    height: 3em;
+    line-height: 1em;
+    top: calc(50% - 1.5em);
+    display: none;
+  }
+  
+  .banner:hover .trigger
+  {
+    background-color: rgba(0,183,255,.5);
+  }
+  
+  .trigger.izq
+  {
+    left: 0;
+    border-radius: 0 50% 50% 0;
+  }
+  
+  .trigger.der
+  {
+    right: 0;
+    border-radius: 50% 0 0 50%;
+  }
+  
+  .slide_1
+  {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    background-color: #4A7BA6;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/intro-pantallas-movil.jpg');
+  }
+  
+  .slide_2
+  {
+    -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+    background-color: #0D4767;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/intro-unidades-moviles.jpg');
+  }
+  
+  .slide_3
+  {
+    -webkit-animation-delay: 12s;
+            animation-delay: 12s;
+    background-color: #699FC9;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/intro-simuladores-movil.jpg');
+  }
+  
+  .slide_4
+  {
+    -webkit-animation-delay: 18s;
+            animation-delay: 18s;  
+    background-color: #B2BAC6;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/laboratorios-online-movil.jpg');
+  }
+  
+  
+  /*========================
+  QUIENES SOMOS
+  ========================*/
+  
+  /* .empresa {}
+  
+  .empresa .articulo {}
+   */
+  .empresa .iconos {
+    color: rgb(4, 100, 144);
+    padding: 3em;
+    padding: 5vh 0;
+    background-color: #fff;
+  }
+  
+  /* .empresa .iconos .explicacion {} */
+  
+  .empresa .icono {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1em;
+  }
+  
+  .empresa .iconos .icono::before {
+    content: '';
+    display: block;
+    font-size: 3em;
+    padding: 0.2em;
+    color: rgb(93, 146, 192);
+  }
+  
+  .empresa .iconos .design::before {
+    content: '\f247';
+  }
+  
+  .empresa .iconos .integramos::before {
+    content: '\f066';
+  }
+  
+  .empresa .iconos .equipamos::before {
+    content: '\f085';
+  }
+  
+  .empresa .titulo {
+    font-size: 1.6em;
+    padding-top: .5em;
+    font-weight: 300;
+  }
+  
+  .empresa .titulo b {
+    font-weight: 400;
+  }
+  
+  .empresa .somos {
+    background: -webkit-linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+    background: linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+    color: #fff;
+  }
+  
+  .empresa .somos figure {
+    min-height: 60vh;
+    background-color: rgba(245, 248, 250, .9);
+    background-image: url('http://eduholding.gutierrezedgar.com/img/fondo-video.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .empresa .somos .parrafo {
+    padding: 2em;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+  
+  .empresa .misionvision {
+    background-color: #fff;
+    padding: 2em 2em 4em;
+  }
+  
+  .empresa .misionvision .titulo::before {
+    font-size: 2.5em;
+    display: block;
+    line-height: 1.2em;
+  }
+  
+  .empresa .misionvision .parrafo {}
+  
+  .empresa .titulo.mision::before {
+    content: '\f05b'
+  }
+  
+  .empresa .titulo.mision + .parrafo {
+    padding-bottom: 1em;
+  }
+  
+  .empresa .titulo.vision::before {
+    content: '\f06e';
+  }
+  
+  .empresa .titulo.vision + .parrafo {}
+  
+  
+  /*========================
+  PROYECTOS
+  ========================*/
+  
+  .proyectos {}
+  
+  .proyectos .titulo {
+    background-image: url('http://eduholding.gutierrezedgar.com/imimg/proyectos-eduholding-res-movil.png');
+  }
+  
+  .proyectos .parrafo {
+    padding: 2em;
+  }
+  
+  
+  /*========================
+  SERVICIOS
+  ========================*/
+  
+  .servicios {}
+  
+  .servicios h4.titulo {
+    padding: 1.5em 1em .5em;
+    font-weight: 300;
+    font-size: 1.8em;
+    text-align: left;
+  }
+  
+  .servicios .articulo {
+    padding-top: 1.5em;
+    text-align: left;
+    position: relative;
+    min-height: 50vh;
+  }
+  
+  .servicios .titulo {
+    padding-left: 1em;
+  }
+  
+  .servicios h5.titulo {
+    padding: 1em;
+    padding-left: 2em;
+  }
+  
+  .servicios h5.icono::before {
+    content: '\f01d';
+    display: inline-block;
+    padding-right: 1em;
+  }
+  
+  .servicios h6.titulo {
+    font-size: 1em;
+    padding: 1em 10%;
+  }
+  
+  .servicios .portada {
+    background-image: url('http://eduholding.gutierrezedgar.com/imimg/servicios.jpg');
+  }
+  
+  .servicios .parrafo {
+    text-align: justify;
+    padding: 1em 2em;
+  }
+  
+  .especificaciones {
+    padding-left: 10%;
+    list-style-type: none;
+    font-size: 0.8em;
+  }
+  
+  .especificaciones ~ ul.especificaciones {
+    padding-top: 1em;
+  }
+  
+  .especificaciones ~ p.especificaciones {
+    padding-top: 0.5em;
+  }
+  
+  p.especificaciones {
+    font-size: 1em;
+    padding-left: 6%;
+  }
+  
+  .especificaciones li {
+    padding-left: 1em;
+    line-height: 1.5em;
+    position: relative;
+  }
+  
+  .especificaciones ul {
+    padding-left: 2em;
+    list-style-type: none;
+    font-size: 0.9em;
+  }
+  
+  .especificaciones li::before {
+    content: '';
+    width: .3em;
+    height: .3em;
+    background-color: #0090CB;
+    position: absolute;
+    left: 0em;
+    top: 50%;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .especificaciones .titulo {
+    font-size: 1.2em;
+    padding-bottom: .5em;
+    padding-left: 0;
+    color: rgba(0, 0, 0, .6);
+  }
+  
+  .especificaciones .titulo::before {
+    display: none;
+  }
+  
+  .servicios .articulo .logo {
+    max-width: 14em;
+    margin: .5em;
+    margin-left: 5%;
+  }
+  
+  .logo-promethean {
+    display: block;
+    margin: .5em;
+    margin-left: 5%;
+    max-width: 14em;
+  }
+  
+  .logo-activinspire {
+    position: absolute;
+    right: 10%;
+    width: 35%;
+    top: 66%;
+  }
+  
+  img.logo-classflow {
+    margin: 8% 10% 1em;
+    max-width: 12em;
+    display: block;
+  }
+  
+  img.logo-etf {
+    padding-top: 1.5em;
+  }
+  
+  .logo-netsupport,
+  .logo-jp-ik,
+  .logo-etf {
+    display: block;
+  }
+  
+  .servicios .btn.cta {
+    display: inline-block;
+    margin: 1em 1em 2em 10%;
+    text-Decoration: none;
+    padding: .5em 2em;
+    border-radius: 10px;
+    background: rgb(53, 107, 148);
+    color: white;
+    font-weight: 400;
+    box-shadow: 
+      inset 0 -3px 0 0 rgba(0, 0, 0, .2), 
+      0 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .servicios .imagen-producto {
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 60vw;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  
+  .activeboard .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-con-foto-movil.png');
+    background-size: auto 100%;
+    min-height: 80vw;
+  }
+  
+  .activepanel .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activepanel-res-movil.jpg');
+  }
+  
+  .activinspire .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activinspire-home-res-movil.jpg');
+    margin-bottom: 3em;
+  }
+  
+  .classflow .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/classflow-portada-home-res-movil.png');
+    background-size: contain;
+  }
+  
+  .rosseta .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/rosseta-stone-home-portada-montaje.jpg');
+  }
+  
+  .rosseta .imagen-producto.dos {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/rosseta-stone-edades-res-movil.jpg');
+  }
+  
+  .netsupport .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/netsupport.jpg');
+    background-size: 101% auto;
+    background-position: 50% -2px;
+  }
+  
+  .jp-ik .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/etf-services.jpg');
+  }
+  
+  .etf .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/jpik-services.jpg');
+  }
+  
+  .educar-editores .imagen-producto {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/educar-editores-movil.jpg');
+  }
+  
+  .rosseta .dos .cta {
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .niveles {
+    position: absolute;
+    top: 0;
+    background: #4B7BA7;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    right: 5%;
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .niveles p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    line-height: 0.8em;
+    width: 100%;
+    max-width: initial;
+  }
+  
+  .niveles b,
+  .niveles span {
+    font-size: .6em;
+    line-height: 1em;
+  }
+  
+  .niveles span {
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  
+  .niveles b {
+    display: block;
+    padding: 0 1.6em;
+    -webkit-transform: scale(1.3) translateY(20%);
+            transform: scale(1.3) translateY(20%);
+  }
+  
+  .servicios .btn.mas-info {
+    display: inline-block !important;
+    background: #0C4565;
+    color: white;
+    text-decoration: none;
+    padding: .5em 1em;
+    font-size: 0.9em;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .5);
+  }
+  
+  .netsupport .school {
+    position: absolute;
+    width: 12em;
+    right: 0;
+    padding: 1em;
+    top: 0;
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%);
+    background: rgba(255, 255, 255, .8);
+  }
+  
+  
+  /*========================
+  NUESTROS ÉXITOS
+  ========================*/
+  
+  
+  /*========================
+  ALIADOS
+  ========================*/
+  
+  
+  /*========================
+  PIE DE PAGINA
+  ========================*/
+  
+  .pie-pagina {
+    background-color: #134060;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/contacto-fondo-res-movil.jpg');
+    background-size: 130% auto;
+    background-position: top left;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pie-pagina::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, rgba(19, 64, 96, 0) 0%, rgba(19, 64, 96, 1) 50%);
+    background-image: linear-gradient(to bottom, rgba(19, 64, 96, 0) 0%, rgba(19, 64, 96, 1) 50%);
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .pie-pagina .formulario {
+    position: relative;
+    z-index: 2;
+    max-width: 30em;
+    margin: auto;
+    padding-bottom: 3em;
+  }
+  
+  .pie-pagina .titulo {
+    padding: 0.6em 1em;
+    background-color: rgba(255, 255, 255, .8);
+    margin-bottom: 30vh;
+    position: relative;
+  }
+  
+  .pie-pagina .titulo::before {
+    content: 'todos los campos son obligatorios';
+    position: absolute;
+    top: 110%;
+    font-size: .45em;
+    color: white;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    text-transform: uppercase;
+  }
+  
+  .pie-pagina label {
+    display: block;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 0.2em;
+  }
+  
+  .pie-pagina .formulario label.enfoque {
+    padding-top: 0.5em;
+  }
+  
+  .seleccion {
+    padding: 0 0.5em 0.5em;
+  }
+  
+  .seleccion li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .seleccion li input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  .pie-pagina .entrada-texto {
+    width: 90%;
+    border: none;
+    font-size: 1em;
+    padding: 0.4em 1em;
+    background-color: rgba(255, 255, 255, .8);
+    color: #134060;
+  }
+  
+  .entrada-texto.primer {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .seleccion label {
+    padding: 0.5em 1em;
+    border: 1px solid rgba(255, 255, 255, .5);
+    margin: 0.4em 0.2em;
+    border-radius: 5px;
+    font-size: 0.6em;
+    letter-spacing: 0.05em;
+  }
+  
+  .seleccion label:focus,
+  .seleccion label:hover,
+  .seleccion input:focus + label {
+    box-shadow: inset 0 3em 0 0 rgba(255, 255, 255, .2);
+  }
+  
+  .btn.enviar {
+    display: inline-block;
+    margin: auto;
+    width: 90%;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .5em 2em;
+    border-radius: 0 0 10px 10px;
+    border: none;
+    background: rgb(53, 107, 148);
+    color: white;
+    font-weight: 400;
+    box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, .2), 0 5px 1em rgba(0, 0, 0, 0.2);
+  }
+  
+  .seleccion input:checked + label {
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: #134060;
+  }
+  
+  .otra-opcion:not(:checked) ~ .otro {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .otra-opcion:checked ~ .entrada-texto.otro {
+    -webkit-animation: aparece-abajo .5s ease .5s both;
+            animation: aparece-abajo .5s ease .5s both;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .otra-opcion:checked + label {
+    width: 6em;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .entrada-texto.otro {
+    font-size: 1em;
+    min-width: 10em;
+    padding: 0.4em;
+    border-radius: 5px;
+    width: calc(100% - 5.5em);
+  }
+  
+  .comentario {
+    min-height: 20vh;
+  }
+  
+  .pie-pagina .info {
+    position: relative;
+    z-index: 10;
+    font-size: .9em;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2em 5% 3em;
+  }
+  
+  .info .logo {
+    max-width: 8em;
+    display: inline-block;
+  }
+  
+  .info ul {
+    padding-bottom: 1em;
+  }
+  
+  .info li {
+    display: inline-block;
+  }
+  
+  .info .enlace {
+    color: rgb(143, 183, 214);
+    text-decoration: none;
+    padding: 0.4em;
+    display: inline-block;
+  }
+  
+  .info span span {
+    color: rgb(143, 183, 214);
+  }
+  
+  .info span:nth-child(2) {
+    display: inline-block;
+    padding-left: 1em;
+  }
+  
+  .info p {
+    width: 90%;
+    margin: auto;
+  }
+  
+  .redes {
+    background-color: rgba(0, 0, 0, .2);
+    position: relative;
+    z-index: 10;
+    padding: .5em 10%;
+  }
+  
+  .redes a {
+    display: inline-block;
+    width: 20%;
+    color: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    padding: 0.3em;
+    font-size: 2px;
+  }
+  
+  .redes a:hover::before {
+    color: #fff;
+  }
+  
+  .redes .icono::before {
+    content: '\f1e0';
+    font-size: 2.4rem;
+    color: rgb(105, 159, 201);
+  }
+  
+  .icono.facebook::before {
+    content: '\f082';
+  }
+  
+  .icono.youtube::before {
+    content: '\f166';
+  }
+  
+  .icono.twitter::before {
+    content: '\f081';
+  }
+  
+  /*===========================
+  PRODUCT BOX
+  =============================*/
+  
+  .pop-up
+  {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 700;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .pop-up:target
+  {
+    pointer-events: initial;
+    opacity: 1;
+  }
+  
+  
+  .pop-up iframe
+  {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .product-box {
+    background-color: rgba(255,255,255,1);
+    position: fixed;
+    width: 90%;
+    top: 50vh;
+    left: 50%;
+    z-index: 600;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 0 100vw rgba(245,245,245,.9);
+    padding-right: 4em;
+  }
+  
+  .product-box,
+  .trigger.product:first-child
+  {
+    border-radius: 0 10px 0 0;
+  }
+  
+  .product-box .logo
+  {
+    width: 10em;
+    height: 3em;
+    background: #fff;
+    position: absolute;
+    top: -2.9em;
+    left: 0;
+    border-radius: 10px 0 0 0;
+    background-image: url('http://eduholding.gutierrezedgar.com/img/promethean-logo.png');
+    background-size: 85% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+  
+  .product-box .logo .volver
+  {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    height: 2.5em;
+    width: 8em;
+    line-height: 2.5em;
+    font-size: .8em;
+    padding: 0 1em;
+    left: 100%;
+    bottom: 0;
+    text-decoration: none;
+    border-radius: 0 10px 0 0;
+  }
+  
+  .product-box input
+  {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+  }
+  
+  .volver::before
+  {
+    font-family: 'FontAwesome';
+    content: '\f060';
+    display: inline-block;
+    padding: 0 .6em 0 0;
+  }
+  
+  .box
+  {
+    padding-top: 1em;
+  }
+  
+  .menu-products
+  {
+    position: absolute;
+    width: 4em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    text-align: right;
+    /*background-color: rgb(26,87,128);*/
+  }
+  
+  .menu-products::after  
+  {
+    content: '';
+    display: block;
+    clear:both;
+  }
+  
+  .trigger.product
+  {
+    float: right;
+    display: block;
+    background-color: rgb(26,87,128);
+    height: calc(100%/7);
+    width: 100%;
+    line-height: 2em;
+    text-align: center;
+    -webkit-transition: none;
+    transition: none;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  #tag1:checked ~ .menu-products .trigger[for="tag1"],
+  #tag2:checked ~ .menu-products .trigger[for="tag2"],
+  #tag3:checked ~ .menu-products .trigger[for="tag3"],
+  #tag4:checked ~ .menu-products .trigger[for="tag4"],
+  #tag5:checked ~ .menu-products .trigger[for="tag5"],
+  #tag6:checked ~ .menu-products .trigger[for="tag6"],
+  #tag7:checked ~ .menu-products .trigger[for="tag7"]
+  {
+    background-color: #fff;
+  }
+  
+  .trigger.product:hover,
+  .trigger.product:focus
+  {
+    box-shadow: inset 0 0 0 8em rgba(255,255,255,.3) !important;  
+  }
+  
+  .trigger.product:nth-child(odd)
+  {
+    background-color: rgb(48,110,148);
+  }
+  
+  .trigger.product.otro
+  {
+    box-shadow: inset 0 0 0 5em rgba(255,255,255,.1);
+  }
+  
+  .trigger.activboard
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-01-white-activboard.png'); }
+  
+  /*ACTIVBOARD*/
+  
+  .activboard:checked ~ .menu-products .trigger.activboard
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-01-activwall.png'); }
+  
+  .activboard:checked ~ .box .img01:checked ~ .previews .foto
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-foto-movil.png');
+  }
+  
+  .activboard:checked ~ .box .img02:checked ~ .previews .foto
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activboard-frente-movil.png');  
+  }
+  
+  
+  .activboard:checked ~ .box .img03:checked ~ .previews .foto
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activboard-lado-movil.png');  
+  }
+  
+  .activboard:checked ~ .box .img04:checked ~ .previews .foto
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-proyector-frente-movil.png');  
+  }
+  
+  .activboard:checked ~ .box .img05:checked ~ .previews .foto
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activoboard-proyector-3cuartos-movil.png');  
+  }
+  
+  .box .img01:checked ~ .previews .trigger.preview.img01,
+  .box .img02:checked ~ .previews .trigger.preview.img02,
+  .box .img03:checked ~ .previews .trigger.preview.img03,
+  .box .img04:checked ~ .previews .trigger.preview.img04,
+  .box .img05:checked ~ .previews .trigger.preview.img05
+  {
+    box-shadow: inset 0 0 0 3em rgba(26,87,128,.3);
+  }
+  
+  .activboard:checked ~ .box .trigger.preview.img01
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-foto-movil.png');
+  }
+  
+  .activboard:checked ~ .box .trigger.preview.img02
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activboard-frente-movil.png');
+  }
+  
+  .activboard:checked ~ .box .trigger.preview.img03
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activboard-lado-movil.png');
+  }
+  
+  .activboard:checked ~ .box .trigger.preview.img04
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-proyector-frente-movil.png');
+  }
+  
+  .activboard:checked ~ .box .trigger.preview.img05
+  {
+    background-image: url('http://eduholding.gutierrezedgar.com/img/activoboard-proyector-3cuartos-movil.png');
+  }
+  
+  .trigger.activpanel
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-02-white-activpanel.png'); }
+  
+  .activpanel:checked ~ .menu-products .trigger.activpanel
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-02-activpanel.png'); }
+  
+  .trigger.activinspire
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-03-white-activinspire.png'); }
+  
+  .activinspire:checked ~ .menu-products .trigger.activinspire
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-03-activinspire.png'); }
+  
+  .trigger.classflow
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-04-white-classflow.png'); }
+  
+  .classflow:checked ~ .menu-products .trigger.classflow
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-04-classflow.png'); }
+  
+  .trigger.activtable
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-05-white-activtable.png'); }
+  
+  .activtable:checked ~ .menu-products .trigger.activtable
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-05-activtable.png'); }
+  
+  .trigger.activoice
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-06-white-activoice.png'); }
+  
+  .activoice:checked ~ .menu-products .trigger.activoice
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-06-activoice.png'); }
+  
+  .trigger.accesorios
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-07-white-accesorios.png'); }
+  
+  .accesorios:checked ~ .menu-products .trigger.accesorios
+  {  background-image: url('http://eduholding.gutierrezedgar.com/img/icono-promethean-07-accesorios.png'); }
+  
+  .previews
+  {
+    text-align: center;  
+    max-width: 40em;
+  }
+  
+  .previews,
+  .product-box .descripcion
+  {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+  }
+  
+  .previews .foto
+  {
+    width: 100%;
+    height: 50%;
+    min-height: 50vh;
+    max-height: 50em;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  
+  .trigger.preview
+  {
+    display: inline-block;
+    width: 18%;
+    min-width: 2em;
+    max-width: 8em;
+    width: 5vw;
+    margin: 1em 0;
+    height: 4em;
+    min-height: 2em;
+    max-height: 8em;
+    height: 5vw;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .trigger.preview:focus,
+  .trigger.preview:hover
+  {
+    box-shadow: inset 0 0 0 5em rgba(255,255,255,.5);
+  }
+  
+  .nombre-producto
+  {
+    font-size: 1.2em;
+    padding: .3em 0;
+  }
+  
+  .product-box .descripcion
+  {
+    font-size: .9em;
+    padding: 1em 2em 2em;
+    max-width: 30em;
+  }
+  
+  .product-box .btn.contacto
+  {
+    display: block;
+    width: 100%;
+    max-width: 16em;
+    padding: .5em 1em;
+    background-color: rgb(26,87,128);
+    color: #fff;
+    border-radius: 0 10px 10px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 
+      inset 0 -0.1em 0 0 rgba(0,0,0,2);
+    margin-bottom: -1.5em;
+  }
+  
+  
+  /*========================
+  ANIMATIONS
+  ========================*/
+  
+  @-webkit-keyframes aparece-abajo {
+    0% {
+      display: none;
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    10% {
+      display: block;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+      display: block;
+    }
+  }
+  
+  @keyframes aparece-abajo {
+    0% {
+      display: none;
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+    }
+    10% {
+      display: block;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+      display: block;
+    }
+  }
+  
+  @-webkit-keyframes slider
+  {
+    0%   {-webkit-transform: 
+            translateY(-100%)
+            scale(0.5);transform: 
+            translateY(-100%)
+            scale(0.5);
+          z-index: 5;        
+        }
+    2.5%  {-webkit-transform: translateY(25%)
+            scale(1.5);transform: translateY(25%)
+            scale(1.5);}
+    5%  {-webkit-transform: translateY(0%);transform: translateY(0%);}
+    90%  {-webkit-transform: translateY(0%);transform: translateY(0%);}
+    95%  {-webkit-transform: translateY(-25%);transform: translateY(-25%);}
+    100% {-webkit-transform: translateY(100%);transform: translateY(100%);}
+  }
+  
+  @keyframes slider
+  {
+    0%   {-webkit-transform: 
+            translateY(-100%)
+            scale(0.5);transform: 
+            translateY(-100%)
+            scale(0.5);
+          z-index: 5;        
+        }
+    2.5%  {-webkit-transform: translateY(25%)
+            scale(1.5);transform: translateY(25%)
+            scale(1.5);}
+    5%  {-webkit-transform: translateY(0%);transform: translateY(0%);}
+    90%  {-webkit-transform: translateY(0%);transform: translateY(0%);}
+    95%  {-webkit-transform: translateY(-25%);transform: translateY(-25%);}
+    100% {-webkit-transform: translateY(100%);transform: translateY(100%);}
+  }
+  
+  @-webkit-keyframes duracion
+  {
+    0%   {-webkit-transform: scaleX(0);transform: scaleX(0);}
+    100% {-webkit-transform: scaleX(1);transform: scaleX(1);}
+  }
+  
+  @keyframes duracion
+  {
+    0%   {-webkit-transform: scaleX(0);transform: scaleX(0);}
+    100% {-webkit-transform: scaleX(1);transform: scaleX(1);}
+  }
+  
+  @-webkit-keyframes activa-elemento
+  {
+    0%   {pointer-events: none;}
+    100% {pointer-events: initial;}
+  }
+  
+  @keyframes activa-elemento
+  {
+    0%   {pointer-events: none;}
+    100% {pointer-events: initial;}
+  }
+  
+  
+  /*========================
+  MEDIA QUERIES
+  ========================*/
+  
+  @media (max-width: 900px) and (max-height: 450px) {
+    .encabezado {
+      position: relative;
+    }
+    .logo-landing .menu .logo {
+      -webkit-transition: all .5s ease .5s;
+      transition: all .5s ease .5s;
+    }
+    .contenedor {
+      margin-top: 0;
+    }
+    .menu .logo {
+      overflow: hidden;
+      max-height: 2.5em;
+      background-image: url('http://eduholding.gutierrezedgar.com/img/logo-eduholding-movil.png');
+      background-size: 100% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .menu .logo img {
+      margin-top: 3em;
+    }
+    .banner .slider figcaption {
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 1200px) and (max-height: 650px) {
+    .seccion.banner,
+    .empresa .somos figure,
+    .seccion .portada {
+      min-height: 100vh;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .contenedor {
+      margin-top: 4.5em;
+    }
+    .menu .trigger {
+      display: none;
+    }
+    .menu ul {
+      position: relative;
+      opacity: 1;
+      min-width: initial;
+      overflow: visible;
+      max-height: initial;
+      display: inline-block;
+      width: calc(100% - 8.5em);
+      text-align: right;
+      background: rgba(255, 255, 255, 0);
+      font-size: 0.9em;
+      padding-left: 2em;    
+    }
+    /*CLASES DINAMICAS CON JQUERY*/
+    .logo-landing .menu .logo {
+      max-width: 10em;
+      -webkit-transition: all .5s ease .5s;
+      transition: all .5s ease .5s;
+    }
+    .logo-landing .menu ul {
+      width: calc(100% - 12.5em);
+      padding-right: 3em;
+    }
+    
+    .menu li {
+      display: inline-block;
+      margin: -0.3em -0.2em;
+    }
+    .menu .logo,
+    .menu .enlace {
+      -webkit-transition: none;
+      transition: none;
+      font-size: 0.8em;
+    }  
+    .menu .enlace
+    {
+      padding: .5em 1em;
+    }
+    .menu .enlace:hover {
+      color: rgb(53, 107, 148);
+      font-weight: 600;    
+      background: rgba(81,131,174,.05);
+      border-radius: 10px;
+    }  
+  
+    .slide_1
+    {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/intro-pantallas-full.jpg');
+    }
+  
+    .slide_2
+    {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/intro-unidades-moviles-full.jpg');
+    }
+  
+    .slide_3
+    {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/intro-simuladores-full.jpg');
+    }
+  
+    .slide_4
+    {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/laboratorios-online-full.jpg');
+    }
+    
+    .empresa .iconos {
+      font-size: 1.2em;
+    }
+    .empresa .icono {
+      padding: 2em;
+    }
+    .empresa .somos {
+      position: relative;
+      font-size: 1.2em;
+      padding-left: 50%;
+      padding-top: 5vw;
+      padding-bottom: 5vw;
+      background: -webkit-linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+      background: linear-gradient(45deg, rgb(11, 70, 103) 0%, rgb(88, 139, 183) 100%);
+    }
+    .empresa .somos figure,
+    .empresa .somos .parrafo {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .empresa .somos figure {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-height: initial;
+    }
+    .empresa .somos .parrafo {
+      width: 100%;
+      max-width: 40em;
+    }
+    .empresa .titulo {
+      padding: 1em;
+    }
+    .misionvision div {
+      display: inline-block;
+      width: 49%;
+      font-size: 1.2em;
+      vertical-align: top;
+      padding: 0 2em;
+      padding: 0 3vw;
+    }
+    .seccion .portada {
+      min-height: 60vh;
+      background-attachment: fixed;
+    }
+    .proyectos .titulo {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/proyectos-eduholding-res-full.png');
+    }
+    .servicios .portada {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/servicios-full.jpg');
+    }
+    .servicios .articulo .texto {
+      min-height: 50vh;
+    }
+    .servicios .articulo .texto,
+    .servicios .articulo .producto {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+    }
+    .servicios .articulo .producto {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .servicios .imagen-producto {
+      position: absolute;
+      top: 2em;
+      left: 50%;
+      min-height: 100%;
+      width: 45%;
+    }
+    .servicios .izq .imagen-producto,
+    .texto.izq .imagen-producto {
+      left: 5%;
+    }
+    .servicios .articulo.izq {
+      padding-left: 50%;
+    }
+    .activeboard .imagen-producto {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/activeboard-con-foto-full.png');
+      margin-top: -5em;
+    }
+    .activepanel .imagen-producto {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/activepanel-res-full.jpg');
+    }
+    .activinspire .imagen-producto {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/activinspire-home-res-full.jpg');
+      margin: 2em 0 0;
+      left: 55%;
+      width: 40%;
+    }
+    .educar-editores .imagen-producto {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/educar-editores-full.jpg');
+    }
+    .logo-activinspire {
+      top: 18vw;
+    }
+    .der.activinspire {
+      margin-bottom: 3em;
+    }
+    .servicios .articulo h6.titulo,
+    .servicios .articulo .especificaciones {
+      width: 48%;
+      padding-left: 8%;
+      padding-right: 0;
+      padding-bottom: 1em;
+      max-width: 50em;
+    }
+    .servicios .tablerosdigitales .activepanel {
+      padding-left: 50%;
+    }
+    .servicios .activepanel .especificaciones {
+      width: 100%;
+    }
+    .servicios .articulo.izq .especificaciones {
+      width: 90%;
+    }
+    .servicios .articulo .parrafo {
+      padding: 2em;
+      padding-left: 5%;
+      max-width: 48%;
+    }
+    .rosseta .logo {
+      display: block;
+    }
+    .rosseta .imagen-producto.dos {
+      background-image: url('http://eduholding.gutierrezedgar.com/img/rosseta-stone-edades-res-full.jpg');
+      background-position: center;
+      position: relative;
+      left: 5%;
+      margin-top: 1em;
+      min-height: 30vw;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .rosseta .parrafo.dos {
+      display: inline-block;
+      margin-left: 3em;
+    }
+    .niveles {
+      font-size: 1.5em;
+      -webkit-transform: translateX(30%) translateY(-50%);
+              transform: translateX(30%) translateY(-50%);
+      -webkit-transition: none;
+      transition: none;
+    }
+    .pie-pagina {
+      background-size: cover;
+      background-image: url('http://eduholding.gutierrezedgar.com/img/contacto-fondo-res-full.jpg');
+      background-image: url('http://eduholding.gutierrezedgar.com/img/contacto-fondo-res-full.jpg');
+    }
+    .pie-pagina .titulo {
+      margin-bottom: 1em;
+    }
+    .pie-pagina::before {
+      opacity: .5;
+    }
+    .pie-pagina .formulario {
+      margin: 3em auto 0;
+      font-size: 1.1em;
+      max-width: 40em;
+    }
+    .pie-pagina .formulario>label {
+      display: inline-block;
+      width: 25%;
+      text-align: left;
+    }
+    .pie-pagina .entrada-texto {
+      width: 64%;
+      margin-bottom: .2em;
+    }
+    .btn.enviar {
+      width: 64%;
+      margin-left: 25.5%;
+    }
+    .info ul,
+    .info .logo {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .info .logo {
+      max-width: 12em;
+      margin-left: 2em;
+    }
+    .slider::before
+    {
+      height: 5px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .menu .logo,
+    .menu .enlace {
+      font-size: 1em;
+    }
+    .contenedor {
+      margin-top: 6.5em;
+    }
+    
+    .seccion.banner
+    {
+      min-height: 60vh;
+    }
+    
+    .banner .slider
+    {
+      background-attachment: fixed;
+    }
+    
+    .servicios .soluciones,
+    .servicios>.lista {
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+      padding: 2em 1em;
+      max-width: 50em;
+    }
+    .servicios>.lista {
+      padding-top: 5em;
+    }
+    .empresa .somos figure {
+      width: 60%;
+    }
+    .empresa .somos {
+      padding-left: 60%;
+    }
+    .servicios .articulo .producto {
+      height: 90%;
+    }
+    .servicios .articulo .titulo {
+      margin-top: 1em;
+    }
+    .servicios .activepanel .producto {
+      height: 90%;
+    }
+    .servicios .imagen-producto {
+      left: 50%;
+    }
+    .rosseta .imagen-producto.dos {
+      vertical-align: middle;
+    }
+    .niveles {
+      font-size: 1.8em;
+      -webkit-transform: translateX(30%) translateY(-50%);
+              transform: translateX(30%) translateY(-50%);
+    }
+    .pie-pagina .formulario {
+      max-width: 45em;
+    }
+    .pie-pagina .formulario>label:not(.enfoque) {
+      width: 12%;
+      text-align: right;
+    }
+    .pie-pagina .formulario>input {
+      width: 36%;
+    }
+    .entrada-texto.primer {
+      border-radius: 0;
+    }
+    .seleccion {
+      display: inline-block;
+    }
+    .seleccion label {
+      font-size: .8em;
+    }
+    .pie-pagina .formulario>label {
+      font-size: 1em;
+    }
+    .pie-pagina .formulario label.enfoque {
+      width: inherit;
+    }
+    .pie-pagina .formulario label.enfoque,
+    .seleccion {
+      margin-top: .5em;
+    }
+    .pie-pagina .formulario label.etiqueta-comentario {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+    .pie-pagina .entrada-texto.comentario {
+      width: 98%;
+      padding: 0.8em 1em;
+      text-align: justify;
+    }
+    .pie-pagina .formulario>input.enviar {
+      width: 98%;
+      margin: -0.6em;
+    }
+    .pie-pagina .entrada-texto {
+      margin-bottom: .6em;
+    }
+  }
+  
+  @media (min-width: 1600px) {
+    .servicios .activeboard .imagen-producto {
+      margin-top: -8em;
+      background-position: left center;
+      min-height: 120%;
+    }
+    .servicios .articulo .parrafo {
+      max-width: 45em;
+    }
+    .rosseta .imagen-producto {
+      margin-top: 3vw;
+    }
+    .rosseta .parrafo.dos {
+      vertical-align: bottom;
+    }
+    .niveles {
+      font-size: 2.5em;
+      -webkit-transform: translateX(50%) translateY(-50%);
+              transform: translateX(50%) translateY(-50%);
+    }
+    .niveles span {
+      font-size: 0.4em;
+      padding: 0 2em;
+    }
+    .niveles b {
+      padding-bottom: 1em;
+    }
+  }

@@ -1,0 +1,432 @@
+:root {
+    --fuente: "Montserrat", sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco: #ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+
+}
+
+
+h1 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+
+
+
+body {
+    padding-top: 7rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+    padding-bottom: 6rem;
+}
+
+.contenedor-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sin-mod {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img {
+    width: 70%;
+    padding-left: 2rem;
+}
+
+
+.navegacion a {
+    margin-right: 2rem;
+}
+
+.contenedor-main {
+    width: 100%;
+    background-color: white;
+}
+
+
+/*TERMINA HEADER*/
+
+.contenedor-main {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+.comu{
+    flex: 1;
+    max-height: 90vh;
+}
+
+.lista-comunidades {
+    
+    margin-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 16px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    margin-top: .5rem;
+    max-height: 90vh;
+}
+
+
+
+.contenedor-comunidad {
+    padding-bottom: 2rem;
+    margin-top: .5rem;
+    max-height: 90vh;
+    flex: 3; 
+    padding-left: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 16px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+}
+
+/* Botón Eliminar Comunidad */
+.boton-eliminar-comunidad {
+    background-color: #ff6bdf;
+    border: none;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-eliminar-comunidad:hover {
+    background-color: #f04cff;
+    transform: scale(1.05);
+}
+
+
+
+.comunidad-item{
+    border-top: 1px solid #a3a3a3;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    border-bottom: 1px solid #a3a3a3;
+    border-radius: 16px;
+    transition: background-color .3s ease;
+}
+
+.comunidad-item:hover{
+    background-color: #c9c9c9;
+}
+
+.activo-item{
+    background-color: #c9c9c9;
+}
+
+.comunidad-item:last-of-type{
+    border-bottom: none;
+}
+
+.comunidad-item:first-of-type{
+    border-top: none
+}
+
+#boton-salir-comunidad {
+    display: none; /* Se muestra cuando sea necesario */
+    background-color: #ff5252; /* Rojo vibrante */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 2rem;
+
+}
+
+#boton-salir-comunidad:hover {
+    background-color: #ff1744; /* Más oscuro al pasar el cursor */
+}
+
+#boton-salir-comunidad:active {
+    transform: scale(0.98); /* Efecto de presión */
+}
+
+.sin-mod.btn-link {
+    color: #ff69b4; /* Rosa claro */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border: 2px solid #ff69b4;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.sin-mod.btn-link:hover {
+    background-color: #ff69b4; /* Fondo rosa claro en hover */
+    color: white; /* Cambia el texto a blanco */
+}
+
+.sin-mod.btn-link:active {
+    transform: scale(0.98); /* Efecto de presión */
+}
+
+
+.orden-item{
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+}
+
+
+.item-comunidad-img{
+    width: 25%;
+    border-radius: 18px;
+}
+
+.item-titulo{
+    margin-left: 1rem;
+    font-weight: 450;
+}
+
+.publicacion{
+    
+    margin-right: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border: 1px solid #a3a3a3;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+
+.publi-artista{
+    border-bottom: 1px solid #a3a3a3;
+}
+
+.cabecera-publi{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.img-cabecera-publi{
+    height: 90%;
+}
+
+.autor-publi{
+    font-weight: bold;
+}
+
+
+
+.texto-publi{
+
+}
+
+.comentar{
+    padding-bottom: 1rem;
+}
+
+.comentario{
+
+}
+
+.cabecera-comentario{
+    margin-top: 1rem;
+    height: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.comentario-img{
+    height: 90%;
+}
+
+.input-comentario{
+    border-radius: 6px;
+    border-color: #a3a3a3;
+    border-width: 1px;
+    width: 70%;
+
+}
+
+.boton-comentar{
+    background-color: rgb(255, 102, 178);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20%;
+    cursor: pointer;
+    color: white;
+}
+
+.boton-comentar:hover {
+    background-color: rgb(250, 81, 165);
+}
+
+
+.input-publicacion{
+    height: 6rem;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.img-artista{
+    height: 90%;
+}
+
+.input-text{
+    width: 60%;
+    resize: none;
+}
+
+.boton-publi{
+    height: 50%;
+    align-self: center;
+}
+
+
+
+
+
+
+/*empieza footer*/
+
+.footer {
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer {
+
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p {
+    color: white;
+    text-align: center;
+}
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
+    z-index: 999; /* Asegura que esté encima del contenido */
+}
+
+.recuadro-comentarios {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté encima del overlay */
+    text-align: center;
+    width: 50%; /* Ajusta el ancho según sea necesario */
+    height: 50%; /* Ajusta la altura según sea necesario */
+    overflow: auto; /* Agrega scroll si el contenido es largo */
+    border-radius: 16px;
+}
+
+.recuadro-comentarios button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.recuadro-comentarios button:hover {
+    background-color: #0056b3;
+}
+
+.item-comentario{
+    margin-top: 1rem;
+    border: 1px solid #a3a3a3;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+}
+
+.centrar-cabecera{
+    align-items: center;
+}
+
+.nombre-comentario-usuario{
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.texto-comentario{
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: .5rem;
+}
+
+.boton-crear-comunidad{
+    background-color: rgb(255, 102, 178);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30%;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-crear-comunidad:hover {
+    background-color: rgb(250, 81, 165);
+    transform: scale(1.1);
+}
+

@@ -1,0 +1,404 @@
+:root{
+    --fuente: "Montserrat",sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco:#ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3; 
+
+}
+
+
+
+h1{
+    font-size: 2.7rem;
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+
+
+
+body{
+    padding-top: 5rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+    
+    
+}
+
+.contenedor-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.sin-mod{
+    text-decoration: none;
+    color: black;
+}
+.logo-img{
+    width: 70%;
+    padding-left: 2rem;
+}
+
+
+
+.navegacion a{
+    margin-right: 2rem;
+}
+
+
+.contenedor-main{
+    width: 100%;
+    background-color: white;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.arriba-tienda{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+
+
+
+.contenedor-buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    grid-column: 2;
+    
+}
+
+.barra-buscador {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 20rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.boton-buscador {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background-color: rgb(255, 102, 178);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-buscador:hover {
+    background-color: rgb(250, 81, 165);
+}
+
+
+.icono-carro{
+    grid-column: 3;
+    margin-left: 5rem;
+}
+
+.contenedor-main{
+    width: 100%;
+    padding-top: 3rem;
+}
+
+
+.titulo-seccion{
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.seccion-merch{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    margin: 0 auto;
+
+    padding-bottom: 4rem;
+    
+}
+
+.link-producto{
+    text-decoration: none;
+    color: black;
+}
+
+.merch {
+    width: 100%;
+    max-width: 300px; /* Ancho máximo más amplio */
+    height: 400px; /* Altura mayor para contenedor uniforme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 16px;
+    background-color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.merch:hover {
+    transform: scale(1.03);
+}
+
+/* Contenedor de cada producto (merch) */
+.merch {
+    width: 100%;
+    max-width: 300px; /* Ancho máximo para consistencia */
+    height: 520px; /* Altura aumentada para más espacio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 16px;
+    background-color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.merch:hover {
+    transform: scale(1.03);
+}
+
+/* Imagen del producto */
+.img-merch {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Recorta la imagen si es necesario */
+    aspect-ratio: 1; /* Mantiene una proporción cuadrada */
+    border-radius: 16px 16px 0 0;
+}
+/* Texto y detalles del producto */
+.contenido-merch {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.nombre-artista-merch {
+    font-weight: bold;
+}
+
+.nombre-merch {
+    font-size: 1.5rem; /* Tamaño mayor de la fuente */
+}
+
+.precio {
+    font-size: 1.3rem; /* Tamaño mayor de la fuente */
+    font-weight: 600;
+}
+
+/* Botón de compra dentro del contenedor de producto */
+.boton-compra {
+    width: 90%; /* Ajuste del ancho del botón dentro del contenedor */
+    padding: 12px;
+    font-size: 1rem; /* Tamaño mayor de la fuente del botón */
+    cursor: pointer;
+    background-color: rgb(255, 102, 178);
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    margin-top: auto;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-compra:hover {
+    background-color: rgb(250, 81, 165);
+    transform: scale(1.05);
+}
+
+
+/* Notificación de producto añadido */
+.notificacion-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Contador del carrito */
+.contador-carrito {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    display: none;
+}
+
+/* Ventana emergente de carrito */
+.ventana-carrito {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    padding: 15px;
+    z-index: 1000;
+}
+
+/*PRODUCTO UNICO MERCH*/
+
+.contenedor-informacion-merch{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.contenedor-informacion-merch{
+    width: 90%;
+    padding-left: 2rem;
+}
+
+.informacion-merch-imagen{
+    width: 90%;
+}
+
+.informacion-merch{
+    margin-left: 2rem;
+
+}
+.informacion-merch-artista{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.precio-cantidad{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.informacion-merch-cantidad {
+    width: 100px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.informacion-merch-boton{
+        margin-bottom: 1rem;
+        padding: 1.5rem 1.5rem; 
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: rgb(255, 102, 178);
+        color: white;
+        border: none;
+        border-radius: 8px; 
+        margin-top: 1rem;  
+        
+        transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.informacion-merch-boton:hover{
+    background-color: rgb(250, 81, 165);
+    transform: scale(1.2);
+    
+}
+
+
+/* Estilos para la notificación de producto añadido */
+.notificacion-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 350px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+}
+
+.detalle-producto {
+    display: flex;
+    align-items: center;
+}
+
+.imagen-producto {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.notificacion-carrito p {
+    margin: 0;
+}
+
+
+
+.footer{
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer{
+    
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p{
+    color: white;
+    text-align: center;
+}
+

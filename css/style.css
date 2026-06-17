@@ -1,0 +1,386 @@
+:root {
+    --fuente: "Montserrat", sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco: #ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+
+}
+
+
+h1 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+
+
+
+body {
+    padding-top: 7rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+}
+
+.contenedor-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sin-mod {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img {
+    width: 70%;
+    padding-left: 2rem;
+}
+
+
+.navegacion a {
+    margin-right: 2rem;
+}
+
+.contenedor-perfil {
+    background-color: var(--blanco);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contenedor-banner {
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.contenedor-foto-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    bottom: 5rem; /* Para que los elementos dentro se posicionen de manera relativa a este contenedor */
+}
+
+.foto-perfil {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.boton-izquierdo,
+.boton-derecho {
+    position: relative; /* Mantener propiedades relativas */
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ocultar{
+    visibility: hidden;
+}
+
+
+
+/* Ajustes adicionales para responsividad */
+.boton-izquierdo {
+    right: 1rem; /* Ajustar la posición a la izquierda */
+}
+
+.boton-derecho {
+    left: 1rem; /* Ajustar la posición a la derecha */
+}
+
+.boton-accion {
+    
+    display: flex;
+    align-items: center;
+    padding: .1rem 1.1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(255, 102, 178);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-accion:hover{
+    transform: scale(1.1);
+    background-color: rgb(250, 81, 165);
+
+}
+
+
+.nombre {
+    margin-top: 0;
+    position: relative;
+    bottom: 5rem;
+    text-align: center;
+}
+
+.descripcion-artista {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    position: relative;
+    bottom: 5rem;
+}
+
+.contenedor-estadisticas {
+    margin: 0 auto;
+    width: 80%;
+    position: relative;
+    bottom: 2rem;
+    background-color: #f8f5f5;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.contenedor-estadisticas-oyente {
+    margin: 0 auto;
+    width: 30%;
+    position: relative;
+    bottom: 2rem;
+    background-color: #f8f5f5;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.estadistica p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.estadistica-dato {
+    text-align: center;
+}
+
+.titulo {
+    margin-top: 0;
+    text-align: center;
+}
+
+.contenedor-album {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    padding-bottom: 5rem;
+}
+
+.contenedor-imagen {
+    width: 1fr;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor-imagen:hover .imagen {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+.encabezado_titulos{
+    display: flex;
+    gap: 3rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-iconos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición para mostrar los iconos */
+}
+
+.contenedor-imagen:hover .overlay-iconos {
+    opacity: 1;
+}
+
+.icono {
+    color: white;
+}
+
+.icono-cancion{
+    color: white;
+
+}
+
+.icono-editar{
+    margin-left: 2rem;
+}
+.icono-eliminar{
+    margin-right: 2rem;
+}
+
+.icono-cancion:hover{
+    color: black;
+    
+}
+
+.imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.seguir-boton{
+    margin: 0 auto;
+    display: block;
+    padding: .1rem 1.1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgb(255, 102, 178);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.seguir-boton:hover{
+    transform: scale(1.1);
+    background-color: rgb(250, 81, 165);
+
+}
+#overlay-eliminar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    z-index: 1000; /* Asegura que esté al frente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido del overlay centrado */
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-estadisticas-vista {
+    margin-top: 2rem;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
+    z-index: 999; /* Asegura que esté encima del contenido */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté encima del overlay */
+    text-align: center;
+}
+
+.modal button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer {
+
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p {
+    color: white;
+    text-align: center;
+}

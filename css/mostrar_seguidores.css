@@ -1,0 +1,156 @@
+:root{
+    --fuente: "Montserrat",sans-serif;
+
+    --fondo: #ffffff;
+    --rosa-bonito: #FF8BA0;
+    --negro: #000000;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3; 
+
+}
+
+h1{
+    font-size: 2.7rem;
+}
+
+h2{
+    font-size: 2.2rem;
+}
+
+body{
+    padding-top: 7rem;
+    background-color: white;
+    font-family: var(--fuente);
+    
+}
+
+.container-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.sin-mod{
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img{
+    width: 70%;
+    padding-left: 2rem;
+}
+
+.navegacion a{
+    margin-right: 2rem;
+}
+.contenedor-Main{
+    width: 100%;
+    background-color: white;
+    /* padding: 1rem; */
+}
+ /*TERMINA HEADER*/
+
+ body {
+    background-color: var(--fondo);
+    color: var(--negro);
+    font-family: var(--fuente);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--rosa-bonito);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contenedor-main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seguidores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.seguidor-card {
+    background-color: var(--rosa-bonito);
+    border-radius: 10px;
+    width: 150px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.seguidor-card:hover {
+    transform: scale(1.05);
+}
+
+.seguidor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.seguidor-nombre {
+    font-size: 1rem;
+    color: var(--negro);
+    font-weight: bold;
+}
+
+
+
+
+
+
+ /*EMPIEZA HEADER*/
+
+ /*empieza footer*/
+
+.footer{
+    padding: 2rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer{
+    
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p{
+    color: white;
+    text-align: center;
+}

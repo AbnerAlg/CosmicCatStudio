@@ -1,0 +1,237 @@
+:root {
+    --fuente: "Montserrat", sans-serif;
+
+    --fondo: #c1cec1;
+    --blanco: #ffffff;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+
+}
+
+
+h1 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+
+
+
+body {
+    padding-top: 7rem;
+    background-color: var(--fondo);
+    font-family: var(--fuente);
+    padding-bottom: 6rem;
+}
+
+.contenedor-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--blanco);
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sin-mod {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-img {
+    width: 70%;
+    padding-left: 2rem;
+}
+
+
+.navegacion a {
+    margin-right: 2rem;
+}
+
+.contenedor-main {
+    width: 100%;
+    background-color: white;
+}
+
+
+/*TERMINA HEADER*/
+
+.formulario-direccion {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-direccion h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.direccion-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.direccion-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-enviar {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #a13ca2;
+}
+
+.direccion {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+}
+
+.direccion input[type="radio"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+}
+
+.direccion label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.direccion label p {
+    margin: 0;
+    color: #333;
+}
+
+.direccion label p strong {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.direccion:hover {
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.direccion input[type="radio"]:checked + label {
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+
+.btn-nueva-direccion,
+#btn-usar-direccion {
+    background-color: #e91e63; /* Rosa fuerte */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 3rem;
+}
+
+.btn-nueva-direccion:hover,
+#btn-usar-direccion:hover {
+    background-color: #d81b60; /* Rosa más oscuro para el hover */
+}
+
+.btn-nueva-direccion:active,
+#btn-usar-direccion:active {
+    transform: scale(0.98);
+}
+
+#paypal-button-container {
+    display: none; /* Mostrar el contenedor cuando sea necesario */
+    background-color: #f7f7f7;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+#paypal-button-container.active {
+    display: block;
+}
+
+#paypal-button-container:hover {
+    border-color: #c6c6c6;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/*empieza footer*/
+
+.footer {
+    padding: 1rem;
+    background-color: rgb(201, 32, 207);
+}
+
+.contenedor-footer {
+
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contenedor-footer p {
+    color: white;
+    text-align: center;
+}
